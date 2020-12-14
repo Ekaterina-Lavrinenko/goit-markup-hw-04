@@ -2,6 +2,7 @@
   --main-font: Roboto, sans-serif;
   --secondary-font: Raleway, sans-serif;
   --accent-color: #2196f3;
+  --card-set-gap: 30px;
 }
 
 .list {
@@ -33,12 +34,16 @@ p {
 
 img {
   display: block;
+  max-width: 100%;
+  height: auto;
 }
 
 .container {
-  width: 2030px;
-  padding: 0 430px;
-  margin: 0 auto;
+  width: 1170px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 body {
@@ -122,6 +127,7 @@ body {
 .address-list-icon {
   display: block;
   fill: #757575;
+  background-color: aqua;
 }
 
 .address-list-item:hover .address-list-icon,
@@ -153,11 +159,8 @@ body {
 /* =============== PAGE STUDIO ============== */
 
 /* ========== HERO ========== */
-.hero .container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  padding: 200px 670px;
+.hero {
+  height: 600px;
   background-color: #2f303a;
   background-image: linear-gradient(
     rgba(47, 48, 58, 0.4),
@@ -166,6 +169,11 @@ body {
     url(../images/hero/Img-hero.jpg);
   background-repeat: no-repeat;
   background-size: cover;
+}
+.hero .container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .hero-title {
@@ -176,6 +184,9 @@ body {
   letter-spacing: 0.06em;
   text-transform: uppercase;
   color: #ffffff;
+  padding-top: 200px;
+  padding-right: 230px;
+  padding-left: 230px;
 }
 
 .hero-link {
@@ -198,19 +209,25 @@ body {
 /* ========== END HERO ========== */
 
 /* ========== ADVANTAGES ========== */
-.advantages-list {
-  display: flex;
-  justify-content: center;
+.advantages {
   padding-top: 94px;
   padding-bottom: 94px;
 }
 
-.advantages-list-item:not(:last-child) {
-  margin-right: 30px;
+.advantages-list {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: calc(-1 * var(--card-set-gap));
+  margin-top: calc(-1 * var(--card-set-gap));
 }
 
-.advantages-list-item {
-  width: 270px;
+.advantages-list > .advantages-list-item {
+  flex-basis: calc(100% / 4 - var(--card-set-gap));
+  margin-left: var(--card-set-gap);
+  margin-top: var(--card-set-gap);
 }
 
 .advantages-list-icon-bg {
@@ -219,7 +236,7 @@ body {
   align-items: center;
   background-color: #F5F4FA;
   border-radius: 4px;
-  width: 270px;
+  max-width: 270px;
   height: 120px;
   margin-bottom: 30px;
 }
@@ -247,19 +264,42 @@ body {
 /* ========== END ADVANTAGES ========== */
 
 /* ========== SERVICES ========== */
-.services-list {
-  display: flex;
+.services {
   padding-bottom: 94px;
-  margin-top: 50px;
 }
 
+.section-title {
+  margin-bottom: 50px;
+}
+.services-list {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: calc(-1 * var(--card-set-gap));
+  margin-top: calc(-1 * var(--card-set-gap));
+}
+
+.services-list > .services-list-item {
+  flex-basis: calc(100% / 3 - var(--card-set-gap));
+  margin-left: var(--card-set-gap);
+  margin-top: var(--card-set-gap);
+}
+
+.services-list-item {
+  max-width: 370px;
+  max-height: 294px;
+}
+/*
 .services-list-item:not(:last-child) {
   margin-right: 30px;
-}
+}  */
+
 /* ========== END SERVICES ========== */
 
 /* ========== TEAMS ========== */
-.teams .container {
+.teams {
   background-color: #f5f4fa;
   padding-top: 94px;
   padding-bottom: 94px;
@@ -336,7 +376,7 @@ padding: 30px 32px;
 
 
 /* ========== REGULAR CLIENTS ========== */
-.clients .container {
+.clients {
   background-color: #ffffff;
   padding-top: 94px;
   padding-bottom: 94px;
@@ -358,7 +398,6 @@ padding: 30px 32px;
   box-sizing: border-box;
   border-radius: 4px;
   background-color: #FFFFFF;
-  margin-top: 50px;
 } 
 
 .clients-list-item:not(:last-child) {
@@ -385,11 +424,15 @@ padding: 30px 32px;
 /* =============== END PAGE STUDIO ============== */
 
 /* ========== FOOTER ========== */
-.footer .container {
-  display: flex;
+.footer {
   background-color: #2f303a;
   padding-top: 60px;
   padding-bottom: 60px;
+}
+
+.footer .container {
+  display: flex;
+  align-items: baseline;
 }
 
 .footer-logo {
@@ -473,7 +516,7 @@ padding: 30px 32px;
 /* ============== PAGE PORTFOLIO =============== */
 
 /* ========== PORTFOLIO ========== */
-.portfolio .container {
+.portfolio {
   padding-top: 94px;
   padding-bottom: 94px;
   border-top: 1px solid #ececec;
@@ -513,19 +556,30 @@ padding: 30px 32px;
 }
 
 .portfolio-list {
+  padding: 0;
+  margin: 0;
+  list-style: none;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  margin-left: calc(-1 * var(--card-set-gap));
+  margin-top: calc(-1 * var(--card-set-gap));
 }
 
-.portfolio-card {
-  background-color: #ffffff;
-  border: 1px solid #eeeeee;
-  padding-bottom: 20px;
+.portfolio-list > .portfolio-list-item {
+  flex-basis: calc(100% / 3 - var(--card-set-gap));
+  margin-left: var(--card-set-gap);
+  margin-top: var(--card-set-gap); 
+}
+  
+.portfolio-card-content {
+  border-left: 1px solid #EEEEEE;
+  border-right: 1px solid #EEEEEE;
+  border-bottom: 1px solid #EEEEEE;
+  overflow: hidden;
 }
 
-.portfolio-card:nth-child(-n + 6) {
-  margin-bottom: 30px;
+.portfolio-card-content {
+  padding: 20px 21px;
 }
 
 .portfolio-project {
@@ -535,22 +589,26 @@ padding: 30px 32px;
   line-height: 2;
   letter-spacing: 0.06em;
   color: #212121;
-  margin-top: 20px;
-  margin-left: 24px;
-  margin-right: 24px;
 }
 
 .portfolio-category {
-  margin-top: 4px;
-  margin-left: 24px;
-  margin-right: 24px;
   font-family: var(--main-font);
   font-weight: 400;
   font-size: 16px;
   line-height: 1.875;
   letter-spacing: 0.03em;
   color: #757575;
+  margin-top: 4px;
 }
+
+.portfolio-card:hover,
+.portfolio-card:focus {
+  box-shadow: 
+  0px 1px 1px rgba(0, 0, 0, 0.12), 
+  0px 4px 4px rgba(0, 0, 0, 0.06), 
+  1px 4px 6px rgba(0, 0, 0, 0.16);
+  display: block;
+} 
 /* ========== END PORTFOLIO ========== */
 
 /* ============== END PAGE PORTFOLIO =============== */
