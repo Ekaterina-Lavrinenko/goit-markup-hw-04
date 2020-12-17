@@ -126,7 +126,8 @@ body {
 
 .address-list-icon {
   display: block;
-  fill: #757575;
+  /* fill: #757575; */
+  fill: currentColor;
   margin-right: 10px;
 }
  
@@ -315,7 +316,6 @@ body {
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-  margin-top: 50px;
 }
 
 .team-card {
