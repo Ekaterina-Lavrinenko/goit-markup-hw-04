@@ -127,11 +127,12 @@ body {
 .address-list-icon {
   display: block;
   fill: #757575;
-  background-color: aqua;
+  margin-right: 10px;
 }
-
+ 
 .address-list-item:hover .address-list-icon,
-.address-list-item:focus .address-list-icon {
+.address-list-item:focus .address-list-icon, 
+.address-list-item:active .address-list-icon{
   fill: var(--accent-color);
 }
 
@@ -140,13 +141,18 @@ body {
 .nav-list-link:focus,
 .header-mail:hover,
 .header-mail:focus,
+.header-mail:active,
 .header-phone:hover,
-.header-phone:focus {
+.header-phone:focus, 
+.header-phone:active{
   color: var(--accent-color);
 }
 
 .header-mail,
 .header-phone {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   font-weight: 500;
   line-height: 1.143;
   letter-spacing: 0.02em;
